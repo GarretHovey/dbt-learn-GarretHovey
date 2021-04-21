@@ -1,3 +1,11 @@
+{{config
+    (
+        materialized = 'table',
+        tags = ["test"]
+    )
+}}
+
+
 with customers as (
 
     select * from {{ ref('stg_customers') }}
@@ -6,7 +14,7 @@ with customers as (
 
 orders as (
 
-    select * from {{ ref('stg_orders') }}
+    select * from {{ ref('Orders') }}
 
 ),
 
